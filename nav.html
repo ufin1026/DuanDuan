@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nav</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        .navbar {
+            color: #355559;
+            width: 100%;
+            height: 80px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            z-index: 999;
+            background-color: rgba(255, 255, 255, 0.8);
+            transition: .5s;
+        }
+
+        .hide_nav {
+            transform: translateY(-80px);
+        }
+
+        .navbar a {
+            margin: 5px;
+            color: #587F8D;
+        }
+
+        .navbar a:hover {
+            margin: 5px;
+            color: burlywood;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            text-align: center;
+        }
+
+        .navbar ul {
+            display: flex;
+            justify-content: space-around;
+
+        }
+
+        .social-icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            fill: #587F8D;
+            transition: .3s;
+        }
+
+        .social a :hover {
+            width: 28px;
+            height: 28px;
+            fill: burlywood;
+            filter: opacity(1);
+        }
+
+        /* cat-paw */
+        .cat-paw {
+            width: 140px;
+            position: fixed;
+            z-index: 999;
+            top: 80%;
+            right: -7.5%;
+            transition: 1s ease-in .5s;
+        }
+
+        .cat-paw :hover {
+            width: 140px;
+            position: fixed;
+            z-index: 999;
+            top: 80%;
+            right: 0%;
+
+        }
+
+        .showmenu {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <a href="" class="navbar-brand col-lg-3 col-sm-6 navbar-expand-lg logo-img">
+            <img src="./images/logo.png" alt="">
+        </a>
+        <ul class="navbar-nav col-lg-6 col-sm-3 nav-btn menu">
+            <li>
+                <a href="">首頁</a>
+            </li>
+            <li>
+                <a href="DuanDuan.html#adopt"> 領養資訊</a>
+            </li>
+            <li>
+                <a href="DuanDuan.html#about duan_duan">關於短短</a>
+            </li>
+            <li>
+                <a href="DuanDuan.html#news">活動消息</a>
+            </li>
+            <li>
+                <a href="DuanDuan.html#contact">聯絡我們</a>
+            </li>
+        </ul>
+
+        <!-- social -->
+        <div class="col-lg-3 col-sm-3 text-center social">
+            <a href="
+            https://www.instagram.com/duanduan_chanmao/?hl=zh-tw">
+                <svg class="icon social-icon">
+                    <use xlink:href="./icomoon/symbol-defs.svg#icon-instagram"></use>
+                </svg>
+            </a>
+            <a href="https://www.facebook.com/duanduanisthebestcat">
+                <svg class="icon social-icon">
+                    <use xlink:href="./icomoon/symbol-defs.svg#icon-facebook"></use>
+                </svg>
+            </a>
+            <!-- hamburger -->
+            <a href="" class="showmenu">
+                <svg class="icon social-icon">
+                    <use xlink:href="./icomoon/symbol-defs.svg#icon-menu"></use>
+                </svg>
+            </a>
+        </div>
+    </nav>
+
+</body>
+
+</html>

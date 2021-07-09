@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZO＝「「「「「「「「「「nIxN0hoP+VmmDGMN5t9UJ0Z"
+        crossorigin="anonymous">
+
+    <style>
+        body {
+            font-size: 0.9rem;
+            color: #3A464A;
+        }
+
+        a {
+            transition: .5s;
+        }
+
+        span {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        /* nav */
+        .navbar {
+            color: #355559;
+            width: 100%;
+            height: 80px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            z-index: 999;
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+
+        .navbar a {
+            margin: 5px;
+            color: #587F8D;
+        }
+
+        .navbar a:hover {
+            margin: 5px;
+            color: burlywood;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            text-align: center;
+        }
+
+        .navbar ul {
+            display: flex;
+            justify-content: space-around;
+
+        }
+
+        .social img {
+            width: 28px;
+            height: 28px;
+        }
+
+        /* header */
+        .main-header {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            background-size: cover;
+            position: relative;
+            background-image: url(./images/main_slide-4.jpg);
+        }
+
+        .info-wrap {
+            height: 700px;
+            background: linear-gradient(to right, rgb(255, 255, 255, 1)30%, rgba(255, 255, 255, 0));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn-info:hover {
+            background-color: burlywood;
+            border: burlywood;
+        }
+
+        .arrow-down {
+            height: 28px;
+            width: 32px;
+            position: absolute;
+            left: 50%;
+            top: 90%;
+            transition: .3s;
+        }
+
+        .arrow-down:hover {
+            filter: drop-shadow(0 15px burlywood);
+        }
+
+        /* slide-adopt */
+        .slide-arrow {
+            height: 28px;
+            width: 28px;
+            position: absolute;
+        }
+
+        .left-arrow {
+            left: 5%;
+            top: 150%;
+        }
+
+        .right-arrow {
+            right: 5%;
+            top: 150%;
+            transform: scaleX(-1);
+        }
+
+        .adopt-img {
+            width: 100%;
+            overflow: hidden;
+            border-radius: 8px 0 0 8px;
+            object-fit: cover;
+        }
+
+        .info-box {
+            border: 10px solid #f9c47440;
+            border-radius: 4px;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .adopt-slide {
+            border-radius: 8px;
+            width: 800px;
+            height: 600px;
+            overflow: hidden;
+
+        }
+
+        .adopt-row {
+            width: 800px;
+            height: 600px;
+        }
+
+        /*  about duan_duan */
+        .img-demo img {
+            width: 100%;
+
+            border-radius: 8px;
+        }
+
+        .img-wrap img {
+            width: 100%;
+            object-fit: contain;
+            overflow: hidden;
+            padding: 10px;
+        }
+
+        .img-row {
+            border-radius: 8px;
+        }
+
+        /* ASIDE MENE */
+        button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .asideMenu {
+            width: 300px;
+            background-color: #474747;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            border-left: 5px solid #ff9a15;
+            padding: 20px;
+            box-shadow: 0 0 5px hsla(240, 40%, 15%, 0.6);
+            transform: translateX(0);
+            transition: all 0.5s;
+        }
+
+        .fa-chevron-right {
+            color: #474747;
+            transform: rotate(0);
+            transition: all 0.5s;
+        }
+
+        .btn {
+            position: absolute;
+            top: 50%;
+            left: -13%;
+            padding: 40px 10px;
+            background-color: #ff9a15;
+            border-radius: 6px 0 0 6px;
+            box-shadow: 0 0 5px hsla(240, 40%, 15%, 0.6);
+        }
+
+        .title {
+            font-size: 24px;
+            color: #ff9a15;
+        }
+
+        .list {
+            display: flex;
+        }
+
+        .optionTitle {
+            color: #ff9a15;
+        }
+
+        .optionList {
+            color: #fff;
+        }
+
+        .fas {
+            color: #fff;
+            outline: none;
+            border: none;
+        }
+
+        .optionList {
+            display: block;
+            padding: 20px;
+            line-height: 2;
+
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 對於不需要折疊的導覽列，在導覽列中加入 .navbar-expand。對於總是折疊的導覽列，不要加任何 .navbar-expand class。 -->
+    <nav class="navbar navbar-expand-lg">
+        <a href="" class="navbar-brand col-lg-3 col-sm-12 navbar-expand-lg logo-img">
+            <img src="./images/logo.png" alt="">
+        </a>
+        <ul class="navbar-nav col-lg-6 col-sm-6 nav-btn">
+            <li>
+                <a href="">首頁</a>
+            </li>
+            <li>
+                <a href=""> 領養資訊</a>
+            </li>
+            <li>
+                <a href="">關於短短</a>
+            </li>
+            <li>
+                <a href="">活動消息</a>
+            </li>
+            <li>
+                <a href="">聯絡我們</a>
+            </li>
+        </ul>
+        <div class="col-lg-3 col-sm-6 text-center social">
+            <a href="
+            https://www.instagram.com/duanduan_chanmao/?hl=zh-tw">
+                <img src="./icon/ig-b_1.svg" alt="">
+            </a>
+            <a href="https://www.facebook.com/duanduanisthebestcat">
+                <img src="./icon/fb-b.svg" alt="">
+            </a>
+        </div>
+    </nav>
+
+    <!-- main-header -->
+    <section class="main-header">
+        <div class="col-lg-6 col-sm-12 info-wrap">
+            <div class="header-info">
+                <h1 class="mb-4">
+                    短短市集19
+                </h1>
+                <p class="mb-4">
+                    <span>
+                        有點匆促的短短市集19，<br>
+                        此次填寫報名表單48小時內，<br>
+                        報名後錄取成功會Email寄出通知信，<br>
+                        再請各位留意信箱唷～
+                    </span>
+                </p>
+                <a href="https://forms.gle/KckCnyEvYzYpN3hb7">
+                    <button class="btn btn-info">攤位報名</button>
+                </a>
+
+            </div>
+
+        </div>
+        <a href="">
+            <div class="arrow-down">
+                <img src="./icon/arrow.svg" alt="">
+            </div>
+        </a>
+
+    </section>
+    <!-- slide-adopt -->
+    <div class="container my-6">
+        <div class="slide-arrow">
+            <div class="arrow left-arrow">
+                <img src="./icon/arrow-y.svg" alt="">
+            </div>
+            <div class="arrow right-arrow">
+                <img src="./icon/arrow-y.svg" alt="">
+            </div>
+        </div>
+
+        <div class="adopt-slide  mx-auto">
+            <ul class="list-unstyled d-flex img-wrap">
+                <li>
+                    <div class="row adopt-row ">
+                        <figure class="col-lg-6 col-sm-12 adopt-img">
+                            <img src="./images/slide-1.png" alt="">
+                        </figure>
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="info-box">
+                                <h2 class="my-3">33</h2>
+                                <span>約1歲 三花 女生</span>
+                                <p class="my-3">
+                                    哺乳室近期出現的可愛寶貝33，<br>鼻子很像撞到牆一坨瘀青，<br>也很像長滿多年的黑頭粉刺拔不完，<br>目前的癖好是喜歡站在木製跳台上，<br>觀望座位區的客人在做些什麼，<br>還有窩在無地板的頂樓加蓋，<br>讓肚子毛從鐵網炸出來。<br>她的媽媽因為有混到波斯貓的血統，<br>所以他的毛比較軟而且毛量比較多，<br>會建議領養人要常常幫牠梳毛。<br>是個約莫一歲多的三花小女生，<br>親人也親貓的孩子，給摸看心情，<br>活潑好動喜歡玩也很貪吃。<br>在等待能夠忍受她小頑皮個性的主人。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="row adopt-row">
+                        <figure class="col-lg-6 col-sm-12 adopt-img">
+                            <img src="./images/slide-2.png" alt="">
+                        </figure>
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="info-box">
+                                <h2 class="my-3">小圍巾</h2>
+                                <span>約1歲 黑貓 女生</span>
+                                <p class="my-3">
+                                    喜歡窩在沙發下面只露出兩顆眼睛，<br>比起其他孩子比較文靜，<br>嘴巴中間有擦上淡淡的粉色小口紅<br>全天候戴著純白色的長圍巾保暖身體，<br>臉型偏圓，以面相學來說是帶福氣。<br>這個孩子是個氣質的小女生，<br>目前稍微有點怕生，<br>但玩起逗貓棒還是很活潑，<br>若有意願領養小圍巾的爸媽，<br>請私訊短短的粉專唷，謝謝。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="row adopt-row ">
+                        <figure class="col-lg-6 col-sm-12 adopt-img">
+                            <img src="./images/slide-1.png" alt="">
+                        </figure>
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="info-box">
+                                <h2 class="my-3">22</h2>
+                                <span>約1歲 三花 女生</span>
+                                <p class="my-3">
+                                    哺乳室近期出現的可愛寶貝33，<br>鼻子很像撞到牆一坨瘀青，<br>也很像長滿多年的黑頭粉刺拔不完，<br>目前的癖好是喜歡站在木製跳台上，<br>觀望座位區的客人在做些什麼，<br>還有窩在無地板的頂樓加蓋，<br>讓肚子毛從鐵網炸出來。<br>她的媽媽因為有混到波斯貓的血統，<br>所以他的毛比較軟而且毛量比較多，<br>會建議領養人要常常幫牠梳毛。<br>是個約莫一歲多的三花小女生，<br>親人也親貓的孩子，給摸看心情，<br>活潑好動喜歡玩也很貪吃。<br>在等待能夠忍受她小頑皮個性的主人。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- about duan_duan -->
+    <div class="container my-6 about ">
+        <div class="col-12">
+            <div class="col-lg-4 col-sm-12 about-info">
+                <h1>關於短短</h1>
+                <p>
+                    沒有很多適合拍照打卡的地方，<br>沒有乾燥花或小道具等等，<br>牆上有的是陪伴短短這間店成長，<br>每個人的作品還有走過的痕跡。<br>還有很多貓很多很多很多的貓.....
+                </p>
+                <div class="col-lg-8 col-sm-12 img-demo">
+                    <img src="./images/demo-1.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="img-wrap d-flex">
+                <div class="img-row"><img src="./images/demo-1.png" alt=""></div>
+                <div class="img-row"><img src="./images/demo-2.png" alt=""></div>
+                <div class="img-row"><img src="./images/demo-3.png" alt=""></div>
+                <div class="img-row"><img src="./images/demo-4.png" alt=""></div>
+                <div class="img-row"><img src="./images/demo-5.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+    <!-- news -->
+    <div class="container my-6 news">
+        <div class="col-lg-4">
+            <h1>活動消息</h1>
+            <span>關於短短_宣導一下</span>
+            <p>
+                最近前來的乾爸媽越來越多了，<br>謝謝身邊合作的團隊廠商還有朋友們，<br>招待不周的部分還請見諒包容，<br>預計年後會再換新菜單5.0可以期待一下！<br>我們還有很多不足和需要改進的地方，<br>也請大家多多指教，<br>更希望這裡的店貓89們都能繼續開開心心，<br>等家的孩子都能順利找到好人家<br>預告一下接下來幾個月的活動：<br>🐈02/27短短市集19<br>🐈04/24華山的毛怪市集<br>🐈05/20-05/23有超大型活動，<br>活動釋出會再讓大家知道嘿嘿嘿
+            </p>
+        </div>
+        <div class="col-lg-8">
+            <div class="slide-arrow-sm">
+                <div class="arrow left-arrow">
+                    <img src="./icon/arrow.svg" alt="">
+                </div>
+                <div class="arrow right-arrow">
+                    <img src="./icon/arrow.svg" alt="">
+                </div>
+            </div>
+            <div class="col-6 Jan">
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- about cats -->
+    <!-- aside Menu -->
+    <div class="asideMenu">
+        <button class="btn"><i class="fas fa-chevron-right fa-2x"></i></button>
+        <div class="title">Aside Menu</div>
+        <div class="list">
+            <ul class="optionTitle">
+                <li>index</li>
+                <li>username</li>
+                <li>city</li>
+                <li>number</li>
+                <li>edit</li>
+                <li>delete</li>
+            </ul>
+            <ul class="optionList">
+                <li>1</li>
+                <li>Tim</li>
+                <li>Taipei</li>
+                <li>0912345678</li>
+                <li><button><i class="fas fa-edit fa-lg"></i></button></li>
+                <li><button><i class="fas fa-trash-alt fa-lg"></i></button></li>
+            </ul>
+        </div>
+    </div>
+    <!-- contact us -->
+    <div class="map">
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            $(".btn").click(function () {
+                $(".asideMenu").toggleClass("active");
+                $(".fa-chevron-right").toggleClass("rotate");
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>
